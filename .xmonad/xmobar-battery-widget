@@ -1,0 +1,38 @@
+# Flashing battery status script coded to be used with Xmobar
+# 
+# Usage Example:
+#   > get_battery_status 
+#   BAT: <fc=#005500>100%</fc>                                                                           
+# 
+# Azer Koculu <azer@kodfabrik.com>                                                                                                      
+# http://azer.kodfabrik.com                                                                                                             
+# 
+# Thu Nov  4 11:05:58 EET 2010 
+
+flash=$(date +%s)
+bat=$(battery) 
+state=$(acpi | grep 'Battery' | sed 's/Battery\s[0-9]*: //' | sed 's/, [0-9][0-9]*\%.*//' | sed 's/Charging/^/' | sed 's/Discharging/v/' | sed 's/Full//' | sed 's/Unknown//' ) 
+label="BAT:"
+
+color_high="#005500"
+color_normal="#775500"
+color_low="#cc0000"
+
+color=$color_high
+
+if [ $bat -lt 70 ]; then
+  color=$color_normal
+fi
+
+if [ $bat -lt 20 ]; then
+  color=$color_low
+fi
+
+
+if [ $((flash % 2)) -eq 0 ]; then
+  if [ $bat -lt 20 ]; then
+    color="#000000"
+  fi
+fi
+
+echo "$label <fc=$color>$state$bat%</fc>"
