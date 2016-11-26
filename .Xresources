@@ -10,6 +10,9 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.C-c: perl:clipboard:copy
+URxvt.keysym.C-v: perl:clipboard:paste
+URxvt.keysym.C-M-c: perl:clipboard:paste_escaped
 
 URxvt.scrollBar:           false
 URxvt.saveLines:           4096
