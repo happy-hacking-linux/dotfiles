@@ -1,0 +1,12 @@
+gateway=`ip r | grep default | cut -d ' ' -f 3` 
+test=$(ping -q -w 1 -c 1 $gateway> /dev/null && echo 1 || echo 0)
+
+if [ $test -eq 1 ]; then
+  label="Online"
+  color="#008899"
+else
+  label="Offline"
+  color="#aa3300"
+fi
+
+echo "| <fc=$color>$label</fc>"

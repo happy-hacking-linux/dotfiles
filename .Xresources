@@ -26,10 +26,10 @@ URxvt*termName: rxvt-unicode-256color
 
 URxvt.saveLines: 10000
 URxvt.xftAntialias: true
-URxvt.font: xft:Monaco:style=regular:pixelsize=12:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
-URxvt.boldFont:  xft:Monaco:style=regular:pixelsize=12:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
-URxvt.italicFont: xft:Monaco:style=regular:pixelsize=12:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
-URxvt.boldItalicFont: xft:Monaco:style=regular:pixelsize=12:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.font: xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.boldFont:  xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.italicFont: xft:Monaco:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.boldItalicFont: xft:Monaco:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
 
 URxvt.urlLauncher: w3
 URxvt.matcher.button: 1

@@ -4,19 +4,18 @@
 #   > get_battery_status 
 #   BAT: <fc=#005500>100%</fc>                                                                           
 # 
-# Azer Koculu <azer@kodfabrik.com>                                                                                                      
-# http://azer.kodfabrik.com                                                                                                             
+# Azer Koculu <azer@roadbeats.com>                                                                                                      
 # 
 # Thu Nov  4 11:05:58 EET 2010 
 
 flash=$(date +%s)
-bat=$(battery) 
+bat=$(acpi | grep 'Battery' | sed 's/Battery\s[0-9]*: \w*, //' | sed 's/\%.*//') 
 state=$(acpi | grep 'Battery' | sed 's/Battery\s[0-9]*: //' | sed 's/, [0-9][0-9]*\%.*//' | sed 's/Charging/^/' | sed 's/Discharging/v/' | sed 's/Full//' | sed 's/Unknown//' ) 
-label="BAT:"
+label="Battery:"
 
-color_high="#005500"
-color_normal="#775500"
-color_low="#cc0000"
+color_high="#666"
+color_normal="#996600"
+color_low="#aa3300"
 
 color=$color_high
 
@@ -28,10 +27,9 @@ if [ $bat -lt 20 ]; then
   color=$color_low
 fi
 
-
 if [ $((flash % 2)) -eq 0 ]; then
   if [ $bat -lt 20 ]; then
-    color="#000000"
+    color="#222"
   fi
 fi
 

@@ -1,8 +1,0 @@
-test=$(connection-existence)
-
-if [ $test -eq 1 ]; then
-  label="Online"
-  color="#005500"
-  echo "| <fc=$color>$label</fc>"
-fi
-

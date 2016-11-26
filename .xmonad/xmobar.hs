@@ -1,17 +1,24 @@
-Config { font = "xft:Monaco:style=regular:pixelsize=12:antialias=true,hinting=true"
-       , bgColor = "#002b36"
-       , fgColor = "#657b83"
+Config { font = "xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=true"
+       , bgColor = "#222"
+       , fgColor = "#666"
        , position = Top
        , lowerOnStart = True
        , commands = [ 
-                     Run Com "/home/azer/.xmonad/xmobar-battery-widget" ["-s","-r"] "bat" 10
-                    , Run Com "/home/azer/.xmonad/now" ["-s","-r"] "now" 10
-                    , Run Cpu ["-L","3","-H","50","--normal","#657b83","--high","#657b83"] 10
-                    , Run Memory ["-t", "Mem: <usedratio>%"] 10
-                    , Run Com "/home/azer/.xmonad/xmobar-connection-widget" ["-s","-r"] "conn" 10
+                     Run Com ".xmonad/widgets/battery" ["-s","-r"] "battery" 10
+                    , Run Com ".xmonad/widgets/time" ["-s","-r"] "time" 10
+                    , Run Cpu ["-t", "CPU: <total>%", "-L","3","-H","50","--normal","#657b83","--high","#657b83"] 10
+                    , Run Memory ["-t", "Memory: <usedratio>%","-L","3","-H","50","--normal","#657b83","--high","#657b83"] 10
+                    , Run Com ".xmonad/widgets/connection" ["-s","-r"] "connection" 10
+					, Run DynNetwork [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+                             , "--Low"      , "1000"       -- units: kB/s
+                             , "--High"     , "5000"       -- units: kB/s
+                             , "--low"      , "darkgreen"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkred"
+                             ] 10
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %cpu% | %memory% | %conn% | <fc=#777>%bat%</fc> | <fc=#777>%now%</fc> "
+       , template = " %StdinReader% }{ %cpu% | %memory% %connection% | <fc=#777>%battery%</fc> | <fc=#777>%time%</fc> "
        }

@@ -27,25 +27,20 @@ import XMonad.Layout.NoBorders
 
 myManageHook = composeAll
     [
-      className =? "Emacs"            --> doF (W.shift "dev"),
+      className =? "Emacs"            --> doF (W.shift "code"),
       className =? "delicious-surf"   --> doF (W.shift "www"),
       className =? "Firefox"          --> doF (W.shift "www"),
-      className =? "Chromium-browser" --> doF (W.shift "www"),
-      className =? "Vlc"              --> doF (W.shift "play")
+      className =? "Chromium-browser" --> doF (W.shift "www")
     ]
 
 myKeys =
     [
       ((mod4Mask, xK_p), spawn "dmenu_run"),
-      ((mod4Mask, xK_b), spawn "delicious-surf-bookmarks"),
-      ((mod4Mask, xK_g), spawn "delicious-surf-history"),
-      ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock"),
       ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s"),
       ((mod4Mask, xK_o), sendMessage ToggleStruts),
       ((mod4Mask, xK_a), windows (W.view "home")),
-      ((mod4Mask, xK_s), windows (W.view "dev")),
+      ((mod4Mask, xK_s), windows (W.view "code")),
       ((mod4Mask, xK_d), windows (W.view "www")),
-      ((mod4Mask, xK_f), windows (W.view "test")),
       ((0, xK_Print), spawn "scrot")
        -- multimedia keys
        -- XF86AudioLowerVolume
@@ -86,7 +81,7 @@ main = do
         modMask            = mod4Mask,
         terminal           = "urxvt",
         borderWidth        = 2,
-        workspaces         = ["home","dev","www", "4", "5", "6", "7", "8", "9"],
+        workspaces         = ["home","www","code", "4", "5", "6", "7", "8", "9"],
         -- colors
         normalBorderColor  = "#002b36",
         focusedBorderColor = "#657b83",
