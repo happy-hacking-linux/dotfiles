@@ -10,9 +10,9 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-w: perl:clipboard:copy
+URxvt.keysym.C-c: perl:clipboard:copy
 URxvt.keysym.C-v: perl:clipboard:paste
-URxvt.keysym.C-M-v: perl:clipboard:paste_escaped
+URxvt.keysym.C-M-c: perl:clipboard:paste_escaped
 
 URxvt.scrollBar:           false
 URxvt.saveLines:           4096
@@ -26,7 +26,7 @@ URxvt*termName: rxvt-unicode-256color
 
 URxvt.saveLines: 10000
 URxvt.xftAntialias: true
-URxvt.font: xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.font: xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true, xft:Noto Emoji:pixelsize=13, xft:Symbola
 URxvt.boldFont:  xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
 URxvt.italicFont: xft:Monaco:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
 URxvt.boldItalicFont: xft:Monaco:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
