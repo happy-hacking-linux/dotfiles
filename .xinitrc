@@ -5,5 +5,5 @@ xset s off
 xmodmap .xmodmap
 xset -r 135 
 xrandr --output VGA-1 --auto 
-feh --bg-fill /home/azer/wallpaper.jpg &
+feh --bg-fill ~/wallpaper.jpg &
 exec xmonad
