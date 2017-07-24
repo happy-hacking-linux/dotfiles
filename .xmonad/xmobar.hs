@@ -5,6 +5,7 @@ Config { font = "xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=tr
        , lowerOnStart = True
        , commands = [ 
                      Run Com ".xmonad/widgets/battery" ["-s","-r"] "battery" 10
+                    , Run Com ".xmonad/widgets/alsa-volume" ["-s","-r"] "volume" 10
                     , Run Com ".xmonad/widgets/time" ["-s","-r"] "time" 10
                     , Run Cpu ["-t", "CPU: <total>%", "-L","3","-H","50","--normal","#657b83","--high","#657b83"] 10
                     , Run Memory ["-t", "Memory: <usedratio>%","-L","3","-H","50","--normal","#657b83","--high","#657b83"] 10
@@ -20,5 +21,5 @@ Config { font = "xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=tr
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %cpu% | %memory% %connection% | <fc=#777>%battery%</fc> | <fc=#777>%time%</fc> "
+       , template = " %StdinReader% }{ %cpu% | %memory% %connection% | <fc=#777>%battery%</fc> | %volume% | <fc=#777>%time%</fc> "
        }

@@ -1,0 +1,38 @@
+vol=$(amixer sget Master | awk -F"[][%]" '/dB/ { print $2 }')
+off=$(amixer sget Master | grep "off")
+bar=""
+
+color_high="#cc0000"
+color_normal="#880000"
+color_low="#330000"
+
+color=$color_high
+
+if [ $vol -lt 60 ]; then
+  color=$color_normal
+fi
+
+if [ $vol -lt 20 ]; then
+  color=$color_low
+fi
+
+let stripe=$vol/20 
+while [ $stripe -gt 0 ]; do
+  bar="$bar|"
+  let stripe=stripe-1
+done 
+
+if [[ -z "${bar// }" ]]; then
+  if [ $vol -gt 0 ]; then
+    bar="|"
+  else
+    bar="-"
+  fi
+fi
+
+if [[ -n "${off// }" ]]; then
+  bar="-"
+fi
+
+echo "<fc=$color>$bar</fc>"
+
