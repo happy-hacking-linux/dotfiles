@@ -11,8 +11,8 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.keysym.M-w: perl:clipboard:copy
-URxvt.keysym.C-p: perl:clipboard:paste
-URxvt.keysym.C-M-c: perl:clipboard:paste_escaped
+URxvt.keysym.M-p: perl:clipboard:paste
+URxvt.keysym.M-C-p: perl:clipboard:paste_escaped
 
 URxvt.scrollBar:           false
 URxvt.saveLines:           4096
