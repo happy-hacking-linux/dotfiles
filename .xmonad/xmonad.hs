@@ -56,11 +56,11 @@ myKeys =
        -- XF86AudioMute
        , ((0            , 0x1008ff12), spawn "amixer set Master toggle")
        -- XF86AudioNext
-       , ((0            , 0x1008ff17), spawn "mocp -f")
+       , ((0            , 0x1008ff17), spawn "playerctl next")
        -- XF86AudioPrev
-       , ((0            , 0x1008ff16), spawn "mocp -r")
+       , ((0            , 0x1008ff16), spawn "playerctl previous")
        -- XF86AudioPlay
-       , ((0            , 0x1008ff14), spawn "mocp -G")
+       , ((0            , 0x1008ff14), spawn "playerctl play-pause")
        -- XF86MonBrightnessDown
        , ((0            , 0x1008ff03), spawn "light -U 20")
        -- XF86MonBrightnessUp
