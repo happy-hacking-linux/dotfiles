@@ -54,7 +54,7 @@ myKeys =
        -- XF86AudioRaiseVolume
        , ((0            , 0x1008ff13), spawn "amixer set Master 15+")
        -- XF86AudioMute
-       , ((0            , 0x1008ff12), spawn "amixer set Master toggle")
+       , ((0            , 0x1008ff12), spawn "amixer -q -D pulse sset Master toggle")
        -- XF86AudioNext
        , ((0            , 0x1008ff17), spawn "playerctl next")
        -- XF86AudioPrev
